@@ -1,0 +1,23 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+/* button {
+  margin: 20px;
+} */
+div {
+  margin: 20px;
+}
+.navbar {
+  justify-content: space-between;
+}
+span {
+  margin-right: 10px;
+}
+mat-sidenav-container {
+  height: 100%;
+}
+mat-sidenav,
+mat-sidenav-content {
+  padding: 16px;
+}
+mat-sidenav {
+  background-color: lightcoral;
+}

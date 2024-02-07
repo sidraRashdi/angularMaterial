@@ -1,2 +1,155 @@
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<mat-toolbar class="navbar" color="accent">
+  <div>portfolio</div>
+  <div><span> home </span><span>skills</span><span>contacts</span></div>
+</mat-toolbar>
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle>
 <button mat-raised-button>Button</button>
+<div class="mat-display-4">Display 4</div>
+<div class="mat-display-3">Display 3</div>
+<div class="mat-display-2">Display 2</div>
+<div class="mat-display-1">Display 1</div>
+
+<div class="mat-headline">Headline</div>
+<div class="mat-title">Title</div>
+<div class="mat-subheading-2">Subtitle 2</div>
+<div class="mat-subheading-1">Subtitle 1</div>
+
+<div class="mat-body-1">Body 1</div>
+<div class="mat-body-2">Body 2</div>
+
+<div class="mat-caption">Caption</div>
+<div class="mat-overline">Overline</div> -->
+
+<!-- <div>
+  <button color="warn" disableRipple mat-button>button</button>
+  <button color="warn" mat-button>button</button>
+  <button mat-raised-button>button</button>
+  <button mat-icon-button>1</button>
+  <button mat-fab>button</button>
+  <button mat-mini-fab>button</button>
+  <button mat-button>button</button>
+</div>
+<div>
+  <button mat-raised-button color="accent">button</button>
+  <button mat-button color="accent">button</button>
+</div> -->
+
+<!-- icons_practice -->
+<section>
+  <div class="example-label">Icon</div>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <button
+        mat-icon-button
+        aria-label="Example icon button with a vertical three dot icon"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a home icon"
+      >
+        <mat-icon>home</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="accent"
+        aria-label="Example icon button with a menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="warn"
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        disabled
+        aria-label="Example icon button with a open in new tab icon"
+      >
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- toggle-button-practice -->
+
+<div>
+  <mat-button-toggle #toggle value="angular">Angular </mat-button-toggle>
+  <mat-button-toggle-group
+    #toggleGroup="matButtonToggleGroup"
+    multiple
+    vertical
+  >
+    <mat-button-toggle value="angular">Angular </mat-button-toggle>
+    <mat-button-toggle value="react">React</mat-button-toggle>
+    <mat-button-toggle value="vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{ toggleGroup.value }}
+  <mat-button-toggle
+    [aria-label]="alertsEnabled ? 'Disable alerts' : 'Enable alerts'"
+  >
+    <mat-icon>notifications</mat-icon>
+  </mat-button-toggle>
+</div>
+<!-- badge practice -->
+<div>
+  <span [matBadge]="notify" [matBadgeHidden]="notify === 0">notifications</span>
+</div>
+<div>
+  <span matBadgeColor="accent" matBadge="5" matBadgeOverlap="false"
+    >notifications</span
+  >
+</div>
+<div>
+  <span matBadgePosition="below before" matBadge="5">notifications</span>
+  <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+</div>
+
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+<button (click)="loadData()">loadData</button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [opened]="opened">sidenav</mat-sidenav>
+  <mat-sidenav-content
+    >main
+    <button (click)="opened = !opened">toggle</button>
+    <button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <button (click)="sidenav.close()">close</button>
+    <button (click)="sidenav.open()">open</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Front-end</button>
+  <button mat-menu-item>Back-end</button>
+  <button mat-menu-item>Full-Stack</button>
+</mat-menu>
+<button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>angular</button>
+  <button mat-menu-item>react</button>
+  <button mat-menu-item>vue</button>
+</mat-menu>
+
+<mat-menu #lazy="matMenu">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>logout {{ name }}</button>
+    <button mat-menu-item>hobby {{ hobby }}</button>
+  </ng-template>
+</mat-menu>
+<button
+  [matMenuTriggerFor]="lazy"
+  [matMenuTriggerData]="{ name: 'vishwas', hobby: 'football' }"
+>
+  vishwas
+</button>
+<button
+  [matMenuTriggerFor]="lazy"
+  [matMenuTriggerData]="{ name: 'codeEvolution', hobby: 'teaching' }"
+>
+  codeEvolution
+</button>
